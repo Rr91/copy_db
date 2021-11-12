@@ -1,0 +1,26 @@
+Создаём бекап и сразу его архивируем
+
+
+mysqldump -u USER -pPASSWORD DATABASE | gzip > /path/to/outputfile.sql.gz
+
+  
+
+
+это создаст сразу архив
+
+
+gunzip < /path/to/outputfile.sql.gz | mysql -u USER -pPASSWORD DATABASE
+
+
+
+
+а вот это обратно
+
+
+если не получится с gunzip можно сделать 
+
+tar -xzf file.gz | mysql -u USER -pPASSWORD DATABASE
+
+
+scp -r /var/www/georgy_isp/data/www/stolicasveta.ru/wa-system/ root@37.143.11.186:/var/www/easyit/data/www/stolicasveta.test-easy-it.ru/
+
